@@ -5,6 +5,10 @@ public class Car {
     private String model;
     private int horsePower;
 
+    public Car(String brand) {
+        this(brand, "unknown", -1);
+    }
+
     public Car(String brand, String model, int horsePower) {
         this.brand = brand;
         this.model = model;

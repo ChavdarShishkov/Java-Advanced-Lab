@@ -11,6 +11,10 @@ public class Car {
         this.horsePower = horsePower;
     }
 
+    public Car(String brand) {
+        this(brand, "unknown", -1);
+    }
+
     public String getBrand() {
         return brand;
     }

@@ -10,7 +10,6 @@ import java.util.List;
 
 public class P02_CarConstructors {
     public static void main(String[] args) throws IOException {
-
         var reader = new BufferedReader(new InputStreamReader(System.in));
 
         int n = Integer.parseInt(reader.readLine());
@@ -20,10 +19,15 @@ public class P02_CarConstructors {
             String[] tokens = reader.readLine().split("\\s+");
 
             String brand = tokens[0];
-            String model = tokens[1];
-            int horsePower = Integer.parseInt(tokens[2]);
+            Car car;
 
-            Car car = new Car(brand, model, horsePower);
+            if (tokens.length == 1) {
+                car = new Car(brand);
+            } else {
+                String model = tokens[1];
+                int horsePower = Integer.parseInt(tokens[2]);
+                car = new Car(brand, model, horsePower);
+            }
             cars.add(car);
         }
 
