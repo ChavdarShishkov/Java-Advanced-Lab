@@ -9,9 +9,9 @@ public class P04_SumOfMatrixElements {
         int[][] matrix = readMatrix(sc);
         int sum = 0;
 
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                sum += matrix[row][col];
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                sum += anInt;
             }
         }
         System.out.printf("%d\n%d\n%d", matrix.length, matrix[0].length, sum);

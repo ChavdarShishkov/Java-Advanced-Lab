@@ -21,8 +21,8 @@ public class P01_ParkingLot {
             }
             input = sc.nextLine();
         }
+
         String collect = parking.stream().collect(Collectors.joining(System.lineSeparator()));
         System.out.println(collect);
-
     }
 }

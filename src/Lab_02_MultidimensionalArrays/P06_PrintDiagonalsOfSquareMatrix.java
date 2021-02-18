@@ -36,9 +36,9 @@ public class P06_PrintDiagonalsOfSquareMatrix {
             matrix[rowAndCol[0]][rowAndCol[1]] = correctValues.get(i);
         }
 
-        for (int row = 0; row < matrix.length; row++) {
-            for (int col = 0; col < matrix[row].length; col++) {
-                System.out.print(matrix[row][col] + " ");
+        for (int[] ints : matrix) {
+            for (int anInt : ints) {
+                System.out.print(anInt + " ");
             }
             System.out.println();
         }

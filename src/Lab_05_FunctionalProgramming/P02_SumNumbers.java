@@ -3,22 +3,22 @@ package Lab_05_FunctionalProgramming;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.List;
 import java.util.function.Function;
-import java.util.stream.IntStream;
+import java.util.stream.Collectors;
 
 public class P02_SumNumbers {
     public static void main(String[] args) throws Exception {
-        var reader = new BufferedReader(new InputStreamReader(System.in));
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String input = reader.readLine();
-        reader.close();
-        Function<String, IntStream> getIntStream = str -> Arrays.stream(str.split(",\\s+")).mapToInt(Integer::parseInt);
+        String[] numbers = reader.readLine().split(", ");
 
-        Function<String, Long> getCount = str -> getIntStream.apply(str).count();
+        Function<String, Integer> parse = Integer::parseInt;
 
-        Function<String, Integer> getSum = str -> getIntStream.apply(str).sum();
+        List<Integer> listNumbers = Arrays.stream(numbers).map(parse).collect(Collectors.toList());
 
-        System.out.println("Count = " + getCount.apply(input));
-        System.out.println("Sum = " + getSum.apply(input));
+        System.out.println("Count = " + listNumbers.size());
+        int sum = listNumbers.stream().reduce(0, Integer::sum);
+        System.out.println("Sum = " + sum);
     }
 }
